@@ -9,6 +9,8 @@ jobs:
     environment: production
     steps:
       - name: Deploy to Cloudflare
-        run: echo "Deploy to Cloudflare"
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Deploy to Amazon EC2
         run: echo "Deploy to Amazon EC2"
